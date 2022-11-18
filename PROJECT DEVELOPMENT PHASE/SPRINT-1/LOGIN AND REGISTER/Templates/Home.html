@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/home.png')}}">
+    <title>Home</title>
+<style>
+    a{
+        background-color: #1271e6;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      a:hover{
+        color: white;
+        background-color:rgba(8, 136, 249, 0.797);
+      }
+     /* .my-image { 
+        position: relative; 
+        left: 280px; 
+        top:-17px;
+        border: 2px solid black;
+        box-shadow: 10px 10px 10px #36454F;
+        
+    } */
+
+</style>
+
+</head>
+
+
+<body style = "background-image: url({{ url_for('static', filename='img/dark.jpeg') }});background-repeat:no-repeat;background-size:cover;">
+
+      <center> <h1 style = "color: white;">A Gesture-Based Tool For Sterile Browsing Of Radiology Images</h1></center>
+    <center><a href="{{ url_for('login') }}">Login Page</a></center><br>
+    <center><a href="{{ url_for('register') }}">Register Page</a></center><br>
+    
+
+
+</body>
+
+</html>
