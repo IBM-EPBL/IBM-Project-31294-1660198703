@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <style>
+       /* ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0px;
+            overflow: hidden;
+            position: fixed;
+            background-color: aliceblue;
+           
+          }*/
+          
+          li {
+            float: left;
+          }
+          
+          li a {
+            display: block;
+            color:darkblue;
+           font-size:20px;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+          }
+          .active{
+          background-color: gray;
+          color: white;
+          }
+          li a:hover {
+            color: white;
+          }
+          #navbar{
+            
+            position: fixed;
+            margin: 0;
+            padding: 0px;
+            top: 0;
+            overflow: hidden;
+            transition: top 0.3s;
+            list-style-type: none;
+          }
+          .my-image { 
+            position: relative; 
+            left: 280px; 
+            top:-17px;
+            border: 2px solid black;
+            box-shadow: 10px 10px 10px #36454F;
+        } 
+        .doclogo{
+            position: relative;
+            height:40px;
+            width:45px;
+            left:930px;
+            top:-51px;
+        }
+    </style>
+</head>
+<body style= "margin:0;background-attachment:fixed;background-image: url({{ url_for('static', filename='img/doc_b.jpg') }});background-repeat:no-repeat;background-size:cover;">
+   <!--#################### Nav bar #####################-->
+   
+   <div id = "navbar">  
+   <ul style = "list-style-type: none;">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Signup</a></li>
+      </ul>
+    </div>
+    
+    <h1 style = "z-index:-1;top:60px;padding:50px;position:relative;color:darkblue;">A Gesture-based Tool for Sterile Browsing of Radiology Images</h1>
+        <img class = "doclogo" src="{{url_for('static', filename='img/heading.png')}}"
+        <div class="container">
+            <p style = "padding:50px;font-size:x-large;font-family:sans-serif;text-align:justify;width:70%">Humans are able to recognize body and sign language easily.
+                This is possible due to the combination of vision and synaptic interactions that were formed along brain development.
+                In order to replicate this skill in computers, some problems need to be solved: how to separate objects of interest in images and which image capture technology and classification technique are more appropriate, among others.In this project Gesture based Desktop automation ,First the model is trained pre trained on the images of different hand gestures, such as a showing numbers with fingers as 1 ,2,3,4 .
+                This model uses the integrated webcam to capture the video frame. The image of the gesture captured in the video frame is compared with  the Pre-trained model and the gesture is identified. If the gesture predictes is 1 then images is blurred;2, image is resized;3,image is rotated etc.<!--22-->
+            </p>
+        </div>
+       <img class="my-image" src = "{{url_for('static', filename='img/docs.jpg')}}"/>
+
+        <script>
+            var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-70px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+        </script>
+</body>
+</html>
